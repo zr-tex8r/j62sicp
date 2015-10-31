@@ -1,0 +1,64 @@
+\documentclass[uplatex,dvipdfmx,a4paper,papersize]{jsbook}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref,pxjahyper}
+\hypersetup{%
+  colorlinks=false
+  bookmarks=true,
+  bookmarksnumbered=true,
+  pdftitle={非公式SICP [完璧にSICPをマスターして
+    これ以上読む必要が全くない人向けの] 日本語版},
+  pdfauthor={誰か},
+  pdfsubject={これは単なるジョークです}
+}
+\usepackage{pgffor}
+\setlength{\textwidth}{\fullwidth}
+\newcommand\chapterText{アレ。}
+\begin{document}
+%======================================= ふろんとまたー
+\frontmatter
+% 表題ページ
+\begin{titlepage}
+  \newcommand\fSize[1]{\fontsize{#1}{#1}\selectfont}
+  \centering
+  \vspace*{\stretch{1}}
+  {\fSize{40}\gtfamily 非 公 式}\par
+  \vspace{80pt}
+  {\fSize{100}\bfseries SICP}\par
+  \vspace{80pt}
+  {\huge 完璧にSICPをマスターして\\
+  これ以上読む必要が\\
+  全くない人向けの\par}
+  \vspace{30pt}
+  {\fSize{50}\gtfamily 日本語版}\par
+  \vspace*{\stretch{2}}
+\end{titlepage}
+
+% 目次
+\tableofcontents
+
+%---------
+\chapter*{序文}
+\addcontentsline{toc}{chapter}{序文}
+「えっ！？ お前情報系なのに、これまでに1度もSICPを
+翻訳したことがないの！？」\cite{internet}
+と言われて、ついカッとなってやった。
+完成はしてない。
+
+%======================================= めいんまたー
+\mainmatter
+% 第1章～第5章
+\foreach \n in {1,...,5} {
+  \chapter{SICPの第\n 章}
+  \chapterText
+}
+
+%======================================= ばっくまたー
+\backmatter
+% 参考文献
+\begin{thebibliography}{9}
+\bibitem{internet} 情報 インターネット
+\end{thebibliography}
+
+%======================================= それではまたー
+\end{document}
